@@ -23,17 +23,22 @@ public class ImcController extends HttpServlet{
 		return result;
 	}
 	
-	private double toInt(
+	private int toInt(
 			HttpServletRequest req,
 			String param,
 			String padrao) {
+
+		return Integer.parseInt(valor(req, param, padrao));
+	}
+	private double toDouble(HttpServletRequest req, String param, String padrao) {
 
 		return Double.parseDouble(valor(req, param, padrao));
 	}
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		double peso = toInt(req, "peso", "0");
-		double altura = toInt(req, "altura", "1");
+		double peso = toDouble(req, "peso", "0");
+		double altura = toDouble(req, "altura", "1");
+		int sexo = toInt(req, "sexo", "0");
 
 
 		String resultadoCalculo = ImcModel.calcular(peso, altura);

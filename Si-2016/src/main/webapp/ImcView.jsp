@@ -9,6 +9,7 @@
 
   <body>
   	<h1>Cálculo IMC</h1>
+  	<div>
   	<form>
   		<table>
   			<tr>
@@ -18,10 +19,18 @@
   			<tr>
   				<td></td><td><button>Calcular</button></td>
   			</tr>
-  			
+  			<div>
+			<select name="sexo" class="form-control">
+			  <option value="0">Select</option>
+			  <option value="1">Masculino</option>
+			  <option value="2">Feminino</option>
+			</select>
+		  </div>
+		</div>
   		</table>
-		
-  	</form><br>
+  	</form>
+  	</div>
+  	<br>
 	<b>${resultado}</b>
 	<br><br>
 	<b>${situacao}</b>
